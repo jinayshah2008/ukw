@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>For Jiya</title>
+    <meta
+      name="description"
+      content="A personal appreciation site for Jiya, shaped from a real message history."
+    >
+    <link rel="preload" href="assets/love-hero.png" as="image">
+    <style>
+:root {
+  --ink: #1c2b2f;
+  --muted: #5c6664;
+  --paper: #fffaf3;
+  --white: #ffffff;
+  --rose: #b94e5a;
+  --coral: #df846c;
+  --sage: #6e8d69;
+  --blue: #28566b;
+  --honey: #f2ba62;
+  --aqua: #e8f3f2;
+  --line: rgba(28, 43, 47, 0.15);
+  --shadow: 0 24px 70px rgba(29, 33, 31, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero__image,
+.hero__shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__shade {
+  background:
+    linear-gradient(90deg, rgba(12, 28, 30, 0.78), rgba(12, 28, 30, 0.34) 54%, rgba(12, 28, 30, 0.04)),
+    linear-gradient(0deg, rgba(12, 28, 30, 0.48), rgba(12, 28, 30, 0.08) 48%);
+}
+
+.topbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.brand,
+.topbar__links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.brand__mark {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  text-transform: none;
+}
+
+.topbar__links a {
+  border-bottom: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.topbar__links a:hover,
+.topbar__links a:focus-visible {
+  border-bottom-color: currentColor;
+  color: #ffffff;
+}
+
+.hero__layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  align-items: end;
+  gap: 42px;
+  width: min(1180px, calc(100% - 40px));
+  min-height: calc(92vh - 92px);
+  margin: 0 auto;
+  padding: 40px 0 66px;
+}
+
+.hero__copy {
+  max-width: 770px;
+  padding-bottom: 10px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--rose);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: var(--honey);
+}
+
+h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5.4rem;
+  font-weight: 700;
+  line-height: 0.94;
+}
+
+h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.7rem;
+  line-height: 1.05;
+}
+
+h3 {
+  margin: 12px 0 0;
+  font-size: 1.08rem;
+}
+
+.hero__line {
+  max-width: 710px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.16rem;
+  line-height: 1.7;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 18px;
+  cursor: pointer;
+  font-weight: 850;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:focus-visible,
+[contenteditable="true"]:focus-visible {
+  outline: 3px solid rgba(242, 186, 98, 0.72);
+  outline-offset: 3px;
+}
+
+.button--primary {
+  background: var(--rose);
+  color: #ffffff;
+}
+
+.button--primary:hover {
+  background: #9e404b;
+}
+
+.button--soft {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.button__icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.button__icon--letter {
+  border: 2px solid currentColor;
+  border-radius: 3px;
+}
+
+.button__icon--letter::before {
+  position: absolute;
+  inset: 2px 1px auto;
+  height: 9px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.button__icon--spark::before {
+  position: absolute;
+  inset: 1px 7px;
+  width: 4px;
+  background: currentColor;
+  box-shadow: -6px 6px 0 currentColor, 6px 6px 0 currentColor;
+  content: "";
+}
+
+.snapshot {
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 8px;
+  background: rgba(255, 250, 243, 0.91);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  padding: 24px;
+  backdrop-filter: blur(18px);
+}
+
+.snapshot dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.snapshot dl div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 14px;
+}
+
+.snapshot dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.snapshot dd {
+  margin: 4px 0 0;
+  color: var(--blue);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.snapshot p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 82px 0;
+}
+
+.section__head {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 30px;
+}
+
+.section--proof {
+  width: 100%;
+  background: #f6f8ef;
+}
+
+.section--proof .section__head,
+.proof-grid {
+  width: min(1180px, calc(100% - 40px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.proof-card,
+.receipt {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 16px 44px rgba(48, 42, 37, 0.08);
+}
+
+.proof-card {
+  min-height: 245px;
+  padding: 22px;
+}
+
+.proof-card span {
+  color: var(--rose);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.proof-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.58;
+}
+
+.section--receipts {
+  background: var(--paper);
+}
+
+.receipt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.receipt {
+  display: grid;
+  align-content: space-between;
+  min-height: 170px;
+  padding: 24px;
+}
+
+.receipt p {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+
+.receipt span {
+  margin-top: 20px;
+  color: var(--sage);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.section--chat {
+  width: 100%;
+  background: var(--aqua);
+}
+
+.section--chat .section__head,
+.word-cloud {
+  width: min(1180px, calc(100% - 40px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.word-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.word-cloud span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(40, 86, 107, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.74);
+  padding: 11px 14px;
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.word-cloud strong {
+  color: var(--blue);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.28rem;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.day-row {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) 54px;
+  align-items: center;
+  gap: 14px;
+}
+
+.day-row span,
+.day-row strong {
+  font-weight: 900;
+}
+
+.day-row div {
+  height: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+}
+
+.day-row i {
+  display: block;
+  width: var(--size);
+  height: 100%;
+  background: linear-gradient(90deg, var(--sage), var(--honey), var(--rose));
+}
+
+.section--letter {
+  width: 100%;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.letter-sheet {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink);
+  padding: 46px;
+  box-shadow: var(--shadow);
+}
+
+.letter-sheet__date {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 850;
+}
+
+.letter-sheet h2 {
+  font-size: 2.3rem;
+}
+
+.letter-body {
+  margin-top: 26px;
+}
+
+.letter-body p,
+.signature {
+  color: #2c3c3f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.22rem;
+  line-height: 1.82;
+}
+
+.signature {
+  margin: 28px 0 0;
+}
+
+.burst-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.burst-note {
+  position: absolute;
+  left: var(--x);
+  bottom: -80px;
+  max-width: 230px;
+  border: 1px solid rgba(185, 78, 90, 0.26);
+  border-radius: 8px;
+  background: rgba(255, 250, 243, 0.95);
+  box-shadow: 0 14px 34px rgba(33, 26, 22, 0.2);
+  color: var(--ink);
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  font-weight: 900;
+  animation: floatNote 3.8s ease-out forwards;
+}
+
+@keyframes floatNote {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(-2deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-106vh) rotate(10deg);
+  }
+}
+
+@media (max-width: 980px) {
+  h1 {
+    max-width: 13ch;
+    font-size: 3.9rem;
+  }
+
+  h2 {
+    font-size: 2.18rem;
+  }
+
+  .hero__layout {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .snapshot {
+    max-width: 640px;
+  }
+
+  .proof-grid,
+  .receipt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar__links {
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero__layout,
+  .topbar,
+  .section,
+  .section--proof .section__head,
+  .proof-grid,
+  .section--chat .section__head,
+  .word-cloud,
+  .letter-sheet {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .hero__layout {
+    gap: 28px;
+    padding-bottom: 38px;
+  }
+
+  .hero__line {
+    font-size: 1rem;
+  }
+
+  .snapshot dl,
+  .proof-grid,
+  .receipt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day-row {
+    grid-template-columns: 66px minmax(0, 1fr) 44px;
+    gap: 10px;
+  }
+
+  .letter-sheet {
+    padding: 22px;
+  }
+
+  .letter-body p,
+  .signature {
+    font-size: 1.08rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .topbar,
+  .hero__actions,
+  .snapshot,
+  .section--proof,
+  .section--receipts,
+  .section--chat,
+  .section--timeline {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    color: var(--ink);
+  }
+
+  .hero__image,
+  .hero__shade {
+    display: none;
+  }
+
+  .hero__layout {
+    display: block;
+    min-height: auto;
+    padding: 24px 0;
+  }
+
+  .hero__line {
+    color: var(--ink);
+  }
+
+  .section--letter {
+    background: #ffffff;
+    color: var(--ink);
+    padding-top: 0;
+  }
+
+  .letter-sheet {
+    width: 100%;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <img
+        class="hero__image"
+        src="assets/love-hero.png"
+        alt="Two mugs, flowers, and a folded letter resting by a sunlit window."
+      >
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <nav class="topbar" aria-label="Page">
+        <a class="brand" href="#top" aria-label="Back to top">
+          <span class="brand__mark" aria-hidden="true">J</span>
+          <span>for jiya</span>
+        </a>
+        <div class="topbar__links">
+          <a href="#receipts">Receipts</a>
+          <a href="#proof">Proof</a>
+          <a href="#letter">Letter</a>
+        </div>
+      </nav>
+
+      <div class="hero__layout">
+        <section class="hero__copy" aria-label="Jiya appreciation note">
+          <p class="eyebrow">Built from 17,758 messages</p>
+          <h1>Jiya, you are ridiculously loved.</h1>
+          <p class="hero__line" id="heroLine">
+            Not in a dramatic filmy way. In the real way: calls, sorry messages,
+            teasing, checking in, standing by you, and somehow saying your name
+            880 times because apparently one normal "Jiya" was not enough.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#letter">
+              <span class="button__icon button__icon--letter" aria-hidden="true"></span>
+              Read the letter
+            </a>
+            <button class="button button--soft" type="button" id="launchLove">
+              <span class="button__icon button__icon--spark" aria-hidden="true"></span>
+              Fill the room
+            </button>
+          </div>
+        </section>
+
+        <aside class="snapshot" aria-label="Message history snapshot">
+          <p class="eyebrow">The chat math</p>
+          <dl>
+            <div>
+              <dt>Messages</dt>
+              <dd>17,758</dd>
+            </div>
+            <div>
+              <dt>Days</dt>
+              <dd>169</dd>
+            </div>
+            <div>
+              <dt>From you</dt>
+              <dd>9,268</dd>
+            </div>
+            <div>
+              <dt>From Jiya</dt>
+              <dd>7,935</dd>
+            </div>
+          </dl>
+          <p>
+            From Mar 20 to Sep 4, this was not just a chat. It was a whole
+            little world.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section section--proof" id="proof">
+        <div class="section__head">
+          <p class="eyebrow">What the messages prove</p>
+          <h2>This is not small affection.</h2>
+        </div>
+        <div class="proof-grid" aria-label="What the chat proves">
+          <article class="proof-card">
+            <span>01</span>
+            <h3>You are safe with me.</h3>
+            <p>
+              The chat keeps returning to the same promise: if the world is
+              against you, I am still with you.
+            </p>
+          </article>
+          <article class="proof-card">
+            <span>02</span>
+            <h3>You matter in normal moments.</h3>
+            <p>
+              Calls, tiny updates, late replies, sorry paragraphs, random talks:
+              the ordinary stuff became the important stuff.
+            </p>
+          </article>
+          <article class="proof-card">
+            <span>03</span>
+            <h3>Your name became a habit.</h3>
+            <p>
+              "Jiya" appears 880 times, including the legendary
+              "jiiiiiyyyyyyyyaaaaaa" energy that no spellcheck could survive.
+            </p>
+          </article>
+          <article class="proof-card">
+            <span>04</span>
+            <h3>You are allowed to be fully you.</h3>
+            <p>
+              Sweet, chaotic, caring, stubborn, funny, scared sometimes, strong
+              anyway. Loved in all versions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--receipts" id="receipts">
+        <div class="section__head">
+          <p class="eyebrow">Receipts from the chat</p>
+          <h2>Actual things I meant.</h2>
+        </div>
+        <div class="receipt-grid" aria-label="Selected message lines">
+          <article class="receipt">
+            <p>"Nah I love you tbh Best sister ever"</p>
+            <span>Aug 25</span>
+          </article>
+          <article class="receipt">
+            <p>"U are good U are best U are loved one"</p>
+            <span>Aug 9</span>
+          </article>
+          <article class="receipt">
+            <p>"In short I am with you I love you"</p>
+            <span>Jul 28</span>
+          </article>
+          <article class="receipt">
+            <p>"I will stand with u when world is against you"</p>
+            <span>Jul 28</span>
+          </article>
+          <article class="receipt">
+            <p>"Tere se bat karke accha lagta hai"</p>
+            <span>Sep 1</span>
+          </article>
+          <article class="receipt">
+            <p>"HEARTFELT SORRYY"</p>
+            <span>Aug 25</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--chat">
+        <div class="section__head">
+          <p class="eyebrow">The private dictionary</p>
+          <h2>Words that kept showing up.</h2>
+        </div>
+        <div class="word-cloud" aria-label="Recurring chat words">
+          <span><strong>880</strong> Jiya</span>
+          <span><strong>398</strong> hehe</span>
+          <span><strong>201</strong> call</span>
+          <span><strong>152</strong> sorry</span>
+          <span><strong>104</strong> love</span>
+          <span><strong>78</strong> friend</span>
+          <span><strong>56</strong> best</span>
+          <span><strong>29</strong> bestie</span>
+          <span><strong>25</strong> care</span>
+          <span><strong>20</strong> hug</span>
+          <span><strong>19</strong> trust</span>
+          <span><strong>18</strong> stand</span>
+        </div>
+      </section>
+
+      <section class="section section--timeline">
+        <div class="section__head">
+          <p class="eyebrow">The loudest days</p>
+          <h2>When the chat would not sit quietly.</h2>
+        </div>
+        <div class="timeline" aria-label="Top message days">
+          <article class="day-row" style="--size: 100%">
+            <span>Aug 31</span>
+            <div><i></i></div>
+            <strong>824</strong>
+          </article>
+          <article class="day-row" style="--size: 89%">
+            <span>Sep 2</span>
+            <div><i></i></div>
+            <strong>731</strong>
+          </article>
+          <article class="day-row" style="--size: 73%">
+            <span>Aug 7</span>
+            <div><i></i></div>
+            <strong>598</strong>
+          </article>
+          <article class="day-row" style="--size: 70%">
+            <span>Aug 12</span>
+            <div><i></i></div>
+            <strong>577</strong>
+          </article>
+          <article class="day-row" style="--size: 65%">
+            <span>Sep 3</span>
+            <div><i></i></div>
+            <strong>538</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--letter" id="letter">
+        <article class="letter-sheet" aria-label="Personal letter">
+          <p class="letter-sheet__date" id="todayText"></p>
+          <h2>Dear Jiya,</h2>
+          <div class="letter-body">
+            <p>
+              I made this because saying "I care" in one normal message feels
+              too small for the amount of proof sitting in our chat.
+            </p>
+            <p>
+              There are 17,758 messages here, and somehow the meaning is still
+              simple: you matter to me. Your mood matters. Your peace matters.
+              Your silly side, your scared side, your sweet side, your full
+              dramatic Jiya side, all of it matters.
+            </p>
+            <p>
+              I know I joke, I spam, I say sorry in capital letters, and I
+              stretch your name like "jiiiiiyyyyyyyyaaaaaa" because apparently I
+              have no chill. But under all of that is the real thing: I am with
+              you. I love you. I will stand with you when the world feels
+              unfair.
+            </p>
+            <p>
+              Best sister, bestie, didi, favorite headache, whatever title fits
+              that day: thank you for being you. Please remember that you are
+              good, you are best, and you are loved one. Soooo no chance anyone
+              is sick of you.
+            </p>
+            <p>
+              But no one cares about me like when i am feeling down no one
+              notices and no one helps when i am feeling down. Not a single
+              person did no a single.
+            </p>
+          </div>
+          <p class="signature">
+            Always on your side,<br>
+            <span contenteditable="true" id="signatureName">spare._7</span>
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <div class="burst-layer" id="burstLayer" aria-hidden="true"></div>
+    <script>
+const burstPhrases = [
+  "Best sister ever",
+  "You are loved",
+  "I am with you",
+  "Tere se bat karke accha lagta hai",
+  "No chance anyone is sick of you",
+  "I will stand with you",
+  "Jiiiiiyyyyyyyyaaaaaa",
+  "Heartfelt sorry",
+  "You matter",
+  "Always on your side"
+];
+
+const lineOptions = [
+  "Jiya, if messages could turn into proof, ours would need a whole website.",
+  "This is what 17,758 messages say when you put them together: you matter, a lot.",
+  "Some people get one love note. You got statistics, receipts, and a full website because obviously normal is not our style.",
+  "The chat says hehe, sorry, call, love, and Jiya again and again. I think the meaning is clear.",
+  "I care in the noisy way, the protective way, the annoying way, and the always-there way."
+];
+
+const storageKey = "jiya-site-signature";
+const savedSignature = localStorage.getItem(storageKey);
+const signature = document.querySelector("#signatureName");
+
+function setDate() {
+  const date = new Intl.DateTimeFormat(undefined, {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  }).format(new Date());
+  document.querySelector("#todayText").textContent = date;
+}
+
+function launchBurst() {
+  const layer = document.querySelector("#burstLayer");
+  layer.innerHTML = "";
+
+  burstPhrases.forEach((phrase, index) => {
+    const note = document.createElement("span");
+    note.className = "burst-note";
+    note.textContent = phrase;
+    note.style.setProperty("--x", `${7 + ((index * 10) % 84)}%`);
+    note.style.animationDelay = `${index * 0.1}s`;
+    layer.appendChild(note);
+  });
+
+  window.setTimeout(() => {
+    layer.innerHTML = "";
+  }, 4600);
+}
+
+function rotateHeroLine() {
+  const line = document.querySelector("#heroLine");
+  const next = lineOptions[Math.floor(Math.random() * lineOptions.length)];
+  line.textContent = next;
+}
+
+function wireSignature() {
+  if (savedSignature) {
+    signature.textContent = savedSignature;
+  }
+
+  signature.addEventListener("input", () => {
+    localStorage.setItem(storageKey, signature.textContent.trim());
+  });
+}
+
+setDate();
+wireSignature();
+document.querySelector("#launchLove").addEventListener("click", launchBurst);
+document.querySelector(".brand__mark").addEventListener("click", rotateHeroLine);
+    </script>
+  </body>
+</html>
